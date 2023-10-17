@@ -2,6 +2,8 @@
 - name: Deploy microservice on RHEL Podman host.
   hosts: all
 
+#it's not necessary to elevate privileges when using Podman. became: true
+
   tasks:
     - name: Deploy a Podman microservice with the image registry.redhat.io/ubi8/openjdk-17
       containers.podman.podman_image:
