@@ -1,7 +1,7 @@
 ---
 - name: Deploy microservice on RHEL Podman host.
-  hosts: all
-
+  hosts: podman_host
+#This playbook works with the [podman_host] group of the Ansible host inventory.
 #it's not necessary to elevate privileges when using Podman. became: true
 
   tasks:
