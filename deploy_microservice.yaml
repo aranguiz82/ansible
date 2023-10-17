@@ -1,0 +1,13 @@
+---
+- name: Deploy microservice on RHEL Podman host.
+  hosts: all
+
+  tasks:
+    - name: Deploy a Podman microservice with the image registry.redhat.io/ubi8/openjdk-17
+      containers.podman.podman_image:
+        name: ubi8/openjdk-17
+        tag: ubi8/openjdk-17
+    - name: Check the status of the newly created microservice
+      containers.podman.podman_container_info:
+        name: ubi8/openjdk-17
+      register: container_info
