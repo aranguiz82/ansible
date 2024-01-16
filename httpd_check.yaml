@@ -1,6 +1,6 @@
 ---
 - name: Validar servicio httpd
-  hosts: web1
+  hosts: ec2-3-22-248-233.us-east-2.compute.amazonaws.com
 
   tasks:
   - name: validar si httpd está instalado
