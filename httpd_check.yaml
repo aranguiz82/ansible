@@ -1,6 +1,7 @@
 ---
 - name: Validar servicio httpd
   hosts: ec2-3-22-248-233.us-east-2.compute.amazonaws.com
+  gather_facts: false
 
   tasks:
   - name: validar si httpd está instalado
