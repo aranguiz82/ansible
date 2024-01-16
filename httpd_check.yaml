@@ -1,6 +1,6 @@
 ---
   name: Validar servicio httpd
-  hosts: web
+  hosts: web1
 
     tasks:
       name: validar si httpd está instalado
