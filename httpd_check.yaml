@@ -1,0 +1,10 @@
+---
+  name: Validar servicio httpd
+  hosts: web
+
+    tasks:
+      name: validar si httpd está instalado
+      package:
+        name:
+          - httpd
+        state: latest
