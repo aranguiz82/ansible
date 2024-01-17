@@ -16,6 +16,13 @@
       dest: /etc/httpd/conf/httpd.conf
       mode: u=rw,g=r,o=r
     become: true
+  - name: Copiar archivo index.html
+    ansible.builtin.get_url:
+      url: https://github.com/aranguiz82/ansible/blob/28738798a60f44b9fb1d4c7df4b963b0883bd554/index.html
+      dest: /var/www/html/index.html
+      owner: apache:apache
+      mode: u=rw,g=r,o=r
+    become: true
   - name: Enable service httpd
     ansible.builtin.systemd_service:
       name: httpd
