@@ -18,7 +18,7 @@
     become: true
   - name: Copiar archivo httpd.conf
     ansible.builtin.get_url:
-      url: https://github.com/aranguiz82/ansible/blob/20598523df1c4f55f3f307aaf23df7f041ee9f01/httpd.conf
+      url: https://github.com/aranguiz82/ansible/blob/93b8542319762eec5beb4f23feb9ecc259507c1b/httpd.conf
       dest: /etc/httpd/conf/httpd.conf
       mode: u=rw,g=r,o=r
     become: true
