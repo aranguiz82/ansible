@@ -16,11 +16,11 @@
       enabled: true
       masked: no
   - name: Copiar archivo httpd.conf
-    copy:
-      src: /srv/myfiles/foo.conf
-      dest: /etc/foo.conf
-      owner: foo
-      group: foo
+    ansible.builtin.copy:
+      src: https://github.com/aranguiz82/ansible/blob/20598523df1c4f55f3f307aaf23df7f041ee9f01/httpd.conf
+      dest: /etc/httpd/conf/httpd.conf
+      owner: root
+      group: root
       mode: u=rw,g=r,o=r
   - name: Make sure a service unit is running
     ansible.builtin.systemd_service:
