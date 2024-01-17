@@ -1,0 +1,13 @@
+---
+- name: Copiar nueva versión de index.html
+  hosts: web1, web2
+  gather_facts: false
+
+  tasks:
+  - name:Copiar archivo index.html
+    ansible.builtin.get_url:
+      url: https://raw.githubusercontent.com/aranguiz82/ansible/main/index.html
+      dest: /var/www/html/index.html
+      mode: u=rw,g=r,o=r
+    become: true
+      
