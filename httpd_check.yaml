@@ -28,11 +28,11 @@
       name: httpd
       enabled: true
     become: true
-  - name: Reload service httpd, in all cases
-    ansible.builtin.systemd_service:
-      name: httpd.service
-      state: reloaded
-    become: true
+  # - name: Reload service httpd, in all cases
+  #   ansible.builtin.systemd_service:
+  #     name: httpd.service
+  #     state: reloaded
+  #   become: true
   - name: Make sure a service unit is running
     ansible.builtin.systemd_service:
       state: started
