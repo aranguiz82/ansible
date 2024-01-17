@@ -4,7 +4,7 @@
   gather_facts: false
 
   tasks:
-  - name:Copiar archivo index.html
+  - name: Copiar archivo index.html
     ansible.builtin.get_url:
       url: https://raw.githubusercontent.com/aranguiz82/ansible/main/index.html
       dest: /var/www/html/index.html
