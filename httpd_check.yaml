@@ -8,7 +8,6 @@
     package:
       name:
         - httpd
-        - wget
       state: latest
     become: true
   - name: Enable service httpd and ensure it is not masked
@@ -18,13 +17,11 @@
       masked: no
     become: true
   - name: Copiar archivo httpd.conf
-    ansible.builtin.copy:
-      src: /home/ec2-user/httpd.conf
+    ansible.builtin.get_url:
+      url: https://github.com/aranguiz82/ansible/blob/20598523df1c4f55f3f307aaf23df7f041ee9f01/httpd.conf
       dest: /etc/httpd/conf/httpd.conf
-      owner: root
-      group: root
       mode: u=rw,g=r,o=r
-    become: true
+      become: true
   - name: Make sure a service unit is running
     ansible.builtin.systemd_service:
       state: started
