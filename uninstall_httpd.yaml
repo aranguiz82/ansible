@@ -1,0 +1,11 @@
+---
+- name: Desisntalar servicio httpd
+  hosts: web1, web2
+  gather_facts: false
+
+  tasks:
+  - name: Remove the Apache package
+    ansible.builtin.dnf:
+      name: httpd
+      state: absent
+    become: true
