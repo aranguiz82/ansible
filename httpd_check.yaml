@@ -12,13 +12,13 @@
     become: true
   - name: Copiar archivo httpd.conf
     ansible.builtin.get_url:
-      url: https://github.com/aranguiz82/ansible/blob/fde1125a74a3b87a137081ec9b5229f37bf995f4/httpd.conf
+      url: https://raw.githubusercontent.com/aranguiz82/ansible/main/httpd.conf
       dest: /etc/httpd/conf/httpd.conf
       mode: u=rw,g=r,o=r
     become: true
   - name: Copiar archivo index.html
     ansible.builtin.get_url:
-      url: https://github.com/aranguiz82/ansible/blob/28738798a60f44b9fb1d4c7df4b963b0883bd554/index.html
+      url: https://raw.githubusercontent.com/aranguiz82/ansible/main/index.html
       dest: /var/www/html/index.html
       mode: u=rw,g=r,o=r
     become: true
