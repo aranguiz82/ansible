@@ -8,6 +8,7 @@
     package:
       name:
         - httpd
+        - wget
       state: latest
     become: true
   - name: Enable service httpd and ensure it is not masked
