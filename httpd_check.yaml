@@ -10,17 +10,16 @@
         - httpd
       state: latest
     become: true
-  - name: Enable service httpd and ensure it is not masked
-    ansible.builtin.systemd_service:
-      name: httpd
-      enabled: true
-      masked: no
-    become: true
   - name: Copiar archivo httpd.conf
     ansible.builtin.get_url:
       url: https://github.com/aranguiz82/ansible/blob/fde1125a74a3b87a137081ec9b5229f37bf995f4/httpd.conf
       dest: /etc/httpd/conf/httpd.conf
       mode: u=rw,g=r,o=r
+    become: true
+  - name: Enable service httpd
+    ansible.builtin.systemd_service:
+      name: httpd
+      enabled: true
     become: true
   - name: Reload service httpd, in all cases
     ansible.builtin.systemd_service:
