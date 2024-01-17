@@ -18,7 +18,7 @@
     become: true
   - name: Copiar archivo httpd.conf
     ansible.builtin.copy:
-      src: https://github.com/aranguiz82/ansible/blob/20598523df1c4f55f3f307aaf23df7f041ee9f01/httpd.conf
+      src: /home/ec2-user/httpd.conf
       dest: /etc/httpd/conf/httpd.conf
       owner: root
       group: root
